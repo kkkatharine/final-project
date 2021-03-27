@@ -53,6 +53,13 @@ function convertToFahrenheit(event) {
   temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
 }
 
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature = temperatureElement.innerHTML;
+  temperature = Number(temperature);
+  temperatureElement.innerHTML = Math.round(temperature);
+
 let searchForm = document.querySelector("#search-form");
 
 searchForm.addEventListener("submit", handleSubmit);
@@ -60,6 +67,10 @@ searchForm.addEventListener("submit", handleSubmit);
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link")
+
+celsiusLink.addEventListener("click", convertToCelsius)
 
 search("Porto");
 
